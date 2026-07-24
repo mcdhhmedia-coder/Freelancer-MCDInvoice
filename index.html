@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Provider Communication Invoice Form</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+* { box-sizing: border-box; }
+
+input { font-family: inherit; }
+
+input:focus {
+    outline: 2px solid #2b7cff;
+    outline-offset: 2px;
+}
+
+@media print {
+    input {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<form class="invoice-page" aria-label="Freelance Provider Communication Invoice Form" autocomplete="off">
+
+<header class="header">
+    <h1>Freelance CART Captioner and Interpreter</h1>
+    <p>Service has been rendered</p>
+</header>
+
+<main>
+
+<!-- =============
+     INFO GRID 
+============== -->
+<section class="info-grid" aria-label="Invoice Information">
+
+<table aria-label="Communication Provider Information">
+
+<colgroup>
+    <col style="width:30%;">
+    <col style="width:70%;">
+</colgroup>
+
+<tr><th colspan="2">Communication Provider</th></tr>
+<tr>
+    <td><label for="invoiceNumber">Invoice</label></td>
+    <td><input id="invoiceNumber" name="invoiceNumber"></td>
+</tr>
+
+<tr>
+    <td><label for="providerName">Name</label></td>
+    <td><input id="providerName" name="providerName"></td>
+</tr>
+
+<tr>
+    <td><label for="address1">Address</label></td>
+    <td><input id="address1" name="address1"></td>
+</tr>
+
+<tr>
+    <td><label for="address2">Address 2</label></td>
+    <td><input id="address2" name="address2"></td>
+</tr>
+
+<tr>
+    <td><label for="email">Email</label></td>
+    <td><input id="email" name="email"></td>
+</tr>
+
+<tr>
+    <td><label for="vendorCode">Vendor Code</label></td>
+    <td><input id="vendorCode" name="vendorCode"></td>
+</tr>
+
+</table>
+
+<table aria-label="Assignment Information">
+
+<colgroup>
+    <col style="width:30%;">
+    <col style="width:70%;">
+</colgroup>
+
+<tr><th colspan="2">Assignment Information</th></tr>
+
+<tr>
+    <td><label for="requestor">Requestor</label></td>
+    <td><input id="requestor" name="requestor"></td>
+</tr>
+
+<tr>
+    <td><label for="requestId">Request ID</label></td>
+    <td><input id="requestId" name="requestId"></td>
+</tr>
+
+<tr>
+    <td><label for="docket">Docket</label></td>
+    <td><input id="docket" name="docket"></td>
+</tr>
+
+<tr>
+    <td><label for="serviceDate">Service Date</label></td>
+    <td><input id="serviceDate" type="date" name="serviceDate"></td>
+</tr>
+
+<tr>
+    <td><label for="startTime">Start Time</label></td>
+    <td><input id="startTime" type="time" name="startTime"></td>
+</tr>
+
+<tr>
+    <td><label for="endTime">End Time</label></td>
+    <td><input id="endTime" type="time" name="endTime"></td>
+</tr>
+
+</table>
+
+</section>
+
+<!-- =================
+     SERVICE TABLE
+================== -->
+<table class="service-table">
+
+<colgroup>
+    <col style="width:55%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+    <col style="width:15%;">
+</colgroup>
+
+<thead>
+<tr>
+    <th>Description</th>
+    <th>Qty</th>
+    <th>Rate</th>
+    <th>Total</th>
+</tr>
+</thead>
+
+<tbody id="invoiceBody">
+
+<tr data-type="provider">
+    <td>Communication Provider</td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="provider-rate" aria-label="Provider Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td>Onsite</td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" value="5.00" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td>Miles</td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" value="0.70" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="travel">
+    <td>Travel</td>
+    <td><input type="number" class="miles" aria-label="Travel miles"></td>
+    <td><input type="text" disabled value="Auto" aria-label="Travel rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Travel total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+<tr data-type="standard">
+    <td><input type="text" aria-label="Description"></td>
+    <td><input type="number" class="qty" aria-label="Quantity"></td>
+    <td><input type="number" class="rate" aria-label="Rate"></td>
+    <td><input type="text" class="total" readonly aria-label="Total"></td>
+</tr>
+
+</tbody>
+
+<tfoot>
+<tr>
+    <td></td>
+    <td></td>
+    <td><strong>Grand Total</strong></td>
+    <td id="grandTotal">$0.00</td>
+</tr>
+</tfoot>
+
+</table>
+
+</main>
+
+<div class="actions">
+    <button type="button" id="downloadPdfBtn">
+        Download PDF
+    </button>
+
+    <button type="button" id="resetBtn">
+        Reset Invoice
+    </button>
+</div>
+
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="calculation.js"></script>
+<script src="pdf.js"></script>
+
+</body>
+</html>
