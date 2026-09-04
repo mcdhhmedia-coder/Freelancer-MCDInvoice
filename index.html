@@ -34,8 +34,16 @@ input:focus {
 <form class="invoice-page" aria-label="Freelance Provider Communication Invoice Form" autocomplete="off">
 
 <header class="header">
+    <a href="/" class="logo-link">
+         <img 
+              id="invoiceLogo"
+              src="commonwealth_of_mass.png" 
+              alt="Logo of Commonwealth of Massachusetts"
+         >
+    </a>
+
     <h1>Freelance CART Captioner and Interpreter</h1>
-    <p>Service has been rendered</p>
+    <p>Submission of this invoice confirms that the services have been rendered</p>
 </header>
 
 <main>
@@ -151,10 +159,10 @@ input:focus {
 
 <tbody id="invoiceBody">
 
-<tr data-type="provider">
-    <td>Communication Provider</td>
+<tr data-type="base">
+    <td>Base Rate</td>
     <td><input type="number" class="qty" aria-label="Quantity"></td>
-    <td><input type="number" class="provider-rate" aria-label="Provider Rate"></td>
+    <td><input type="number" class="base-rate" aria-label="Base Rate"></td>
     <td><input type="text" class="total" readonly aria-label="Total"></td>
 </tr>
 
