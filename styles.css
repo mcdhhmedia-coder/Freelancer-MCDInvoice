@@ -39,6 +39,17 @@ body {
 .header {
     text-align: center;
     margin-bottom: 25px;
+    position: relative;
+    padding-top: 10px;
+}
+
+.logo-link img { 
+    width: 90px;
+    height: auto; 
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 10px;
 }
 
 .header h1 {
@@ -51,6 +62,7 @@ body {
     margin-top: 5px;
     color: #0055de;
 }
+
 
 /* =========================
    Information Grid
