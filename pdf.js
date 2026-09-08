@@ -198,7 +198,7 @@ function downloadPDF() {
     }
 
     pdf.setTextColor(...COLORS.blue);
-    pdf.setFontSize(22);
+    pdf.setFontSize(18);
 
     pdf.text(
         "Freelance CART Captioner and Interpreter",
