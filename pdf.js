@@ -408,7 +408,7 @@ function downloadPDF() {
             "",
         rate:
             row.querySelector(".rate")?.value ||
-            row.querySelector(".provider-rate")?.value ||
+            row.querySelector(".base-rate")?.value ||
             "",
         total:
             row.querySelector(".total")?.value ||
