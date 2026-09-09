@@ -220,6 +220,17 @@ function downloadPDF() {
 
     y += 30;
 
+    pdf.setFontSize(12);
+
+    pdf.text(
+        "The invoice is only for EOHHS agencies - Billing to MCDHHAP@mass.gov",
+        306,
+        y,
+        { align: "center" }
+    );
+
+    y += 30;
+   
     setBlackText();
 
     /* =========================
